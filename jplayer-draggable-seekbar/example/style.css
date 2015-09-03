@@ -1,0 +1,40 @@
+body {
+	margin: 45px 0 0 0;
+	padding: 5px;
+}
+
+#seekbar {
+    background: lime;
+    cursor: pointer;
+    height: 60px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 100%;
+}
+
+#playbar {
+    background: #f60;
+    cursor: pointer;
+    height: 60px;
+    overflow:hidden;
+    width: 0;
+}
+
+#output {
+	font-family: monospace;
+	font-size: 30px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#info {
+	font-family: monospace;
+	font-size: 20px;
+	margin: 0 auto;
+	padding: 20px 0 0 0;
+	text-align: center;
+}
+
+.pause {
+	display: none;
+}

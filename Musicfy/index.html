@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+                <meta charset="utf-8">
+                
+                <title>Musicfy</title>
+                <link type="text/css" href="css/style.css" rel="stylesheet" />   
+                 
+                <script type="text/javascript" src="js/lib/jquery.min.js"></script> <!-- jQuery 1.5.1 -->
+                <script type="text/javascript" src="js/lib/jquery.jplayer.js"></script> <!-- jPlayer 2.0.9 -->
+                
+                <script type="text/javascript" src="js/lib/mod.csstransitions.min.js"></script>
+                <script type="text/javascript" src="js/lib/jquery.spritely.js"></script>
+                <script type="text/javascript" src="js/boot.js"></script>  
+</head>
+
+<body>
+                <div id="musicEqualizer"></div>
+                <div id="loading"></div>
+		<div id="dialogo"></div>
+                <div id="nowPlaying">Artista: diegolanda<br/><a href="https://soundcloud.com/diegolanda/spaceman-la-gente-esta-muy" target='_blank'>Spaceman La Gente Esta Muy Loca</a></div>
+		<div id="contenidoDialogo">
+		    <div id="contenido">
+                                <h1 class="Berkshire" style="margin-top: 10px;">Musicfy</h1>
+                                <p class="Berkshire justificado">
+                                                Musicfy (pronunciado miu.sik.fai) es un proyecto dirigido por <a href="http://www.kudosideas.com" target="_blank">Kudos Ideas</a>,
+                                                con el prop&oacute;sito de educar y tambien incentivar a j&oacute;venes en el desarrollo de aplicaciones.
+                                </p>
+                                <p class="Berkshire justificado">
+                                                Con Musicfy podr&aacute;s buscar m&uacute;sicas que se encuentran en Soundcloud y poder escucharlas dentro de tu Facebook,
+                                                todav&iacute;a se encuentra en una fase de prueba. Y podemos asegurar que funciona en Google Chrome y pronto en Firefox.
+                                                <br/> Si utilizas otro navegador, lamento decirte que no aseguramos que el programa funcione.
+                                </p>
+                                <p class="Berkshire justificado">
+                                                En el boton de la izquierda podras encontrar a las personas que estuvieron involucradas en este desarrollo,
+                                                como tambien poder compartir esta aplicacion en Facebook o Twitter.
+                                                <br/> Esperamos que te agrade el software y podamos seguir mejorandolo con el tiempo.
+                                </p>
+                                <p class="Berkshire justificado">
+                                                Los chicos que confiaron en Kudos Ideas y ahora son unos desarrolladores Juniors son:<br/>
+                                                - Acu&ntilde;a Sebastian <br/>
+                                                - Landa Mauricio <br/>
+                                                - Quispe Andres <br/>
+                                </p>
+                                <section class="Berkshire justificado">
+                                                <h1>Agradecimientos</h2>
+                                                <a href="http://www.kudosideas.com" target="_blank">Kudos Ideas</a> quiere agradecer a:<br/>
+                                                - A <a href="http://www.vivabolivia.org" target="_blank">Viva Bolivia</a> por habernos financiado con un porcentaje en este proyecto <br/>
+                                                - A Adelante Bolivia por el prestamo de un equipo de computo <br/>
+                                                - A los padres de los participantes por confiar en nosotros <br/>
+                                                <p style="font-size: 12px;">* Kudos Ideas patrocino el resto de los gastos</p>
+                                </section>
+                                <section class="Berkshire justificado">
+                                                <h2>Gracias!</h2>
+                                                <a href="http://www.soundcloud.com" target="_blank"><img src="images/soundcloud.png"/></a>
+                                                <a href="http://www.kudosideas.com" target="_blank"><img src="images/kudosideas.png"/></a>
+                                                <a href="http://www.vivabolivia.org" target="_blank"><img src="images/vivabolivia.gif"/></a>
+                                </section>
+                                <p class="Berkshire justificado">
+                                                <br/>
+                                                * Estamos en busca de patrocinio para continuar desarrollando este software, si eres
+                                                una empresa, persona individual que desea colaborarnos con el desarrollo o simplemente
+                                                quieres ponerte en contacto con nosotros y preguntarnos algo, envianos un mensaje a:
+                                                contacto@kudosideas.com
+                                </p>
+                    </div>
+		<div id="panel">
+				<div id="panelContenido">
+                                        <div id="contenedorLinks">
+                                                <a title="Facebook" href="https://www.facebook.com/sharer.php?u=http://www.kudosideas.com/musicfy/&t=Kudos Ideas Musicfy" target="_blank"><img class="link" src="images/facebook.png" /></a>
+                                                <a title="Twitter" href="https://twitter.com/share?url=http://www.kudosideas.com/musicfy/" target="_blank"><img class="link" src="images/twitter.png"/></a>
+                                                <a href="https://www.facebook.com/andresmauricio.quispesantelices" target="_blank" title="Andres Quispe"><img class="link" src="images/tumche.png"/></a>
+                                                <a href="https://www.facebook.com/sebastian.acunaormeno" title="Sebastian Acu&ntilde;a" target="_blank" title="Sebastian Acu&ntilde;a"><img class="link" src="images/sebatman.png"/></a>
+                                                <a href="https://www.facebook.com/pages/Kudos-Ideas/394170560639779" title="Diego Landa" target="_blank" title="Diego Landa"><img class="link" src="images/diegolanda.png"/></a>
+                                                <a href="https://www.facebook.com/123TheHunter321" target="_blank" title="Mauricio Landa"><img class="link" src="images/mauricio123456.png"/></a>
+                                        </div>
+                                </div>
+				<div id="icono"></div>
+		</div>
+		</div>
+                
+                <section>
+                    <div id="main">
+                        <div id="logo">
+                            <div id="ricky"></div>
+                            <div id="click"></div>
+                            <div id="musicfy">Musicfy</div>
+                        </div>
+                        <div>
+                            <a href="#" class="jp-play" title="play"><img src="images/play.png" /></a>
+                            <a href="#" class="jp-pause" title="pause" style="display:none"><img src="images/pause.png" /></a>
+                            <a href="#" class="jp-restart" title="restart"><img src="images/restart.png" /></a>
+                        </div>
+                        <input id="SCbusqueda" type="text" placeholder="Busca Una Musica" />
+                        
+                    </div>
+                    
+                    <div id="soundcloud">
+                        <div id="waveform" class="progress-container">
+                            <div class="waveform-container">
+                                <img id="waveform-img" />
+                            </div>
+                            <div class="jp-progress">
+                                <div class="jp-seek-bar">
+                                    <div class="jp-play-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+		
+                <script src="http://connect.soundcloud.com/sdk.js"></script>
+                <div id="jquery_jplayer_1"></div>
+                <section>       
+                                <div id="SCresultados"></div>
+                </section>
+</body>
+</html>

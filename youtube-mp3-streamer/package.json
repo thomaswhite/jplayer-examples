@@ -1,0 +1,49 @@
+{
+  "name": "youtube-mp3-streamer",
+  "version": "0.1.0",
+  "description": "Streams YouTube videos as MP3",
+  "keywords": [
+    "youtube",
+    "mp3",
+    "download",
+    "encode",
+    "ffmpeg",
+    "fast",
+    "streams"
+  ],
+  "private": false,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ytdl-core": "0.4.1",
+    "body-parser": "latest",
+    "fluent-ffmpeg": "2.0.0-rc3",
+    "youtube-mp3-downloader": "latest",
+    "request": "latest",
+    "express": "latest",
+    "ejs": "latest",
+    "cron": "latest",
+    "find-remove": "latest"
+  },
+  "author": {
+    "name": "TobiLG"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tobilg/youtube-mp3-downloader.git"
+  },
+  "engines": {
+    "node": ">=0.10.14"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/tobilg/youtube-mp3-downloader/blob/master/LICENSE"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/tobilg/youtube-mp3-downloader/issues"
+  }
+}

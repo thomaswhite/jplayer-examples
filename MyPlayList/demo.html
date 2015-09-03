@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>
+        </title>
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+        <style type="text/css">
+            /* App custom styles */
+            [data-role=page]{height: 100% !important; position:relative !important;}
+            [data-role=footer]{bottom:0; position:absolute !important; top: auto !important; width:100%;}                       
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+
+        <script type="text/javascript">           
+        </script>
+    </head>
+<!--  .jPlayer("play") -->
+    <body>
+        <!-- Start of first page -->
+        <div data-role="page" id="home">
+
+            <div data-role="header">
+                <h1>Radio Station</h1>
+            </div><!-- /header -->
+			
+            <div data-role="content">            	
+                <div style="display: inline text-align:center">
+                    <p><img style="width: 288px; height: 250px" src="samplead.jpg" /></p>
+                </div>
+                <div style="display: inline text-align:center">
+            		 <audio controls="controls" autoplay="autoplay">
+			          <source src="http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg" type="audio/ogg" />
+			          <source src="http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3" type="audio/mp3" />
+			        </audio>            		
+            	</div>
+            </div><!-- /content -->
+
+            <div data-theme="a" data-role="footer">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#home" data-theme="" data-icon="home" class="ui-btn-active ui-state-persist">
+                                Radio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#events" data-theme=""  data-transition="slide" data-icon="grid">
+                                Events
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" data-theme=""  data-transition="slide" data-icon="info">
+                                About
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /header -->
+        </div><!-- /page -->
+
+
+        <!-- Start of second page -->
+        <div data-role="page" id="events">
+
+            <div data-role="header">
+                <h1>Events</h1>
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <ul data-role="listview" data-divider-theme="b" data-inset="true">
+                    <li data-theme="c">
+                        <a href="?eid=1#eventDetails" data-transition="slide">
+                            Cultural Festival
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="?eid=2#eventDetails" data-transition="slide">
+                            Music Concerts
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="?eid=3#eventDetails" data-transition="slide">
+                            Community Drive
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="?eid=4#eventDetails" data-transition="slide">
+                            Comedy Drama
+                        </a>
+                    </li>
+                    <li data-theme="c">
+                        <a href="?eid=5#eventDetails" data-transition="slide">
+                            Some Event
+                        </a>
+                    </li>
+                </ul>
+            </div><!-- /content -->
+
+            <div data-theme="a" data-role="footer">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#home" data-theme="" data-rel="back" data-icon="home">
+                                Radio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#events" data-theme="" data-icon="grid" class="ui-btn-active ui-state-persist">
+                                Events
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" data-theme=""  data-transition="slide"  data-icon="info">
+                                About
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /header -->
+        </div><!-- /page -->
+
+        <!-- Start of second page -->
+                <div data-role="page" id="eventDetails">
+
+                    <div data-role="header">
+                        <a href="#events" data-rel="back" data-theme="" data-icon="back">
+                            Back
+                        </a>
+                        <h1>Event Name</h1>
+                    </div><!-- /header -->
+
+                    <div data-role="content">
+                        <p>
+                            Picture:
+                        </p>
+                        <p>
+                            Venue:
+                        </p>
+                        <p>
+                            Ticket Price:
+                        </p>
+                        <p>
+                            Contacts:
+                        </p>
+                    </div><!-- /content -->
+
+                    <div data-theme="a" data-role="footer">
+
+                    </div><!-- /header -->
+                </div><!-- /page -->
+
+        <!-- Start of third page -->
+        <div data-role="page" id="about">
+
+            <div data-role="header">
+                <h1>About</h1>
+            </div><!-- /header -->
+
+            <div data-role="content">
+                <p>Radio Station Name</p>
+                <p>Frequency</p>
+                <p>Contact Number</p>
+                <p>Email</p>
+                <p>Facebook</p>
+                <p>Twitter</p>
+            </div><!-- /content -->
+
+            <div data-theme="a" data-role="footer">
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li>
+                            <a href="#home" data-theme="" data-rel="back" data-icon="home">
+                                Radio
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#events" data-theme="" data-rel="back" data-icon="grid">
+                                Events
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#about" data-theme="" data-icon="info" class="ui-btn-active ui-state-persist">
+                                About
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /header -->
+        </div><!-- /page -->                
+</body>
+</html>

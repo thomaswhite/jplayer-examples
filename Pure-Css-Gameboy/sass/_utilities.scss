@@ -1,0 +1,201 @@
+$gameboy-color: #F8F5DE;
+$dotmatrix-color: #999;
+$battery-color: #fff;
+$screen-color: #C2CF4A;
+$font-color: #4D25A4;
+$ab-color: #9C4C8E;
+$direction-color: #555;
+$select-start-color: #ccc;
+$hole-color: hsla(0, 0%, 50%, .2);
+
+
+$gameboy-height: 555px;
+$gameboy-width: 340px; 
+$margin: 20px;
+
+
+@mixin size($h: 0, $w: 0, $m: 0){
+  height:$h;
+  width:$w;
+  margin:$m;
+}
+@mixin o-hid {
+  overflow: hidden;
+}
+@mixin absolutize {
+  position:absolute;
+}
+
+@mixin abPos( $top: auto, $right: auto, $bottom: auto, $left: auto
+) {
+  @include absolutize;
+  z-index: 999;
+  top: $top;
+  left: $left;
+  bottom: $bottom;
+  right: $right;
+}
+
+@mixin rotate($degs: -30deg) {
+  -moz-transform:rotate( $degs );
+  -webkit-transform:rotate( $degs );
+  -o-transform: rotate( $degs );
+  -ms-transform: rotate( $degs );
+  transform:rotate( $degs );
+}
+@mixin linear-gradient($col1: hsla(0, 0%, 100%, .5), $col2: transparent) {   
+  background-image: -webkit-gradient(linear, left top, left bottom, from($col1), to($col2));   
+  background-image: -webkit-linear-gradient(top, $col1, $col2);   
+  background-image:    -moz-linear-gradient(top, $col1, $col2);   
+  background-image:     -ms-linear-gradient(top, $col1, $col2);   
+  background-image:      -o-linear-gradient(top, $col1, $col2);   
+  background-image:         linear-gradient(to bottom, $col1, $col2); /* current standard, but unimplemented */
+}
+@mixin radial-gradient($position: 50% 50%, $col1: #fff 0%, $col2: #222 154%) {
+  background-image: -moz-radial-gradient($position, circle closest-side, $col1, $col2 ); 
+  background-image: -webkit-radial-gradient($position, circle closest-side, $col1, $col2 ); 
+  background-image: -o-radial-gradient($position, circle closest-side, $col1, $col2 ); 
+  background-image: -ms-radial-gradient($position, circle closest-side, $col1, $col2 ); 
+  background-image: radial-gradient($position, circle closest-side, $col1, $col2 );
+}
+
+@mixin box-shadow {
+  -moz-box-shadow: 0 0 4px #333 inset, 0 0 30px #777;
+  -webkit-box-shadow: 0 0 4px #333 inset, 0 0 30px #777;
+  box-shadow: 0 0 4px #333 inset, 0 0 30px #777;
+}
+@mixin radius($rad: 10px) {
+  -webkit-border-radius: $rad;
+  border-radius: $rad ; 
+}
+@mixin br-radius($rad: 80px) {
+  -webkit-border-bottom-right-radius: $rad ;
+  border-bottom-right-radius: $rad; 
+}
+@mixin base-border {
+  border: 1px solid $hole-color;
+}
+@mixin content {
+  content: '';
+  display: block;
+  @include absolutize;
+}
+@mixin debug {
+  border: 1px solid red;
+}
+
+@mixin white-text{
+  text-transform: uppercase;
+  color: white;
+  font-size: 9px;
+}
+//// AFTERS
+
+@mixin speaker-hole {
+  &:after {
+    @include content;
+    @include size(48px, 2px, 2px 1px);
+    background: $hole-color;          
+  }
+}
+@mixin speaker-inclination {
+  &:after {
+    @include content;        
+    @include size(43px, 180px, 54px -43px);
+    background: rgba($hole-color, .05);
+    z-index:-1;
+  }
+}
+@mixin triangle($size:10px, $color:red, $direction:down){
+  border-width:$size;  
+  border-style: solid;
+  @if $direction == down {
+    border-color:$color transparent transparent transparent;
+  } @else if $direction == left {
+    border-color: transparent $color transparent transparent;
+  } @else if $direction == up {
+    border-color: transparent transparent $color transparent;
+  } @else if $direction == right {
+    border-color: transparent transparent transparent $color;
+  }          
+}
+@mixin direction-arrows($color: $hole-color) {  
+  &:before {
+    @include content;
+    @include size(0px, 0px, 74px 7px);    
+    @include triangle(6px 4px, $color, down);
+  }
+  &:after {
+    @include content;  
+    @include size(0px, 0px, -16px 7px);
+    @include triangle(6px 4px, $color, up);
+  }
+}
+@mixin controls-sphere {
+  &:before {
+    @include content;  
+    @include size(25px, 17px, 38px 42px);
+    background: $direction-color;
+    z-index:1;
+  }  
+  &:after {
+    @include content;  
+    @include size(20px, 20px, 38px 41px);
+    @include radius;
+    background: darken($direction-color, 3);
+    z-index:2;
+  }
+}
+@mixin select-start-buttons {
+  &:after {  
+    @include content;  
+    @include size(10px, 40px, -46px 0px);
+    @include radius;
+    background: $select-start-color;
+    @include base-border;
+  }  
+}
+@mixin upper-division-sides {
+  &:before {  
+    @include content;  
+    @include size(23px, 5px, -23px 0);
+    background: $hole-color;
+    left:23px;
+  }
+  &:after {  
+    @include content;  
+    @include size(23px, 5px, -23px 0);    
+    background: $hole-color;
+    right:23px;
+  }      
+}
+@mixin glossy-screen {
+  &:after {
+    @include content;  
+    @include size(230px, 100% );    
+    top: 0px;
+    left: 0px;      
+    @include linear-gradient;
+    @include radius;
+    @include br-radius(40px);    
+  }  
+}
+
+@mixin active-button{
+  @include size(20px, 20px);
+  @include abPos(420px, auto, auto, 160px);
+  border-radius: 3px;
+  &:hover{
+    @include linear-gradient($col1: hsla(0, 0%, 0%, .5));
+  }
+}
+
+@mixin click{
+  &:active{
+    box-shadow: 0 0 20px hsla(0, 0%, 0%, .5);
+  }
+}
+
+
+
+

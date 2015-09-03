@@ -1,0 +1,15 @@
+{
+  "name": "jplayerm3udemo",
+  "version": "0.0.1",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthias Gutjahr <mattsches@gmail.com>",
+  "license": "CC0 1.0 Universal",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-bundle-assets": "^2.15.2"
+  }
+}

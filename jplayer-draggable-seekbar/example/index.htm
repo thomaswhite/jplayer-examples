@@ -1,0 +1,54 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+		<title>jPlayer Drag</title>
+	<body>
+		<div id="jplayer"></div>
+		<div id="seekbar" class="seek-bar">
+			<div id="playbar" class="play-bar"></div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<div id="output">
+			<div class="play"><a href="#">Play</a></div>
+			<div class="pause"><a href="#">Pause</a></div>
+			<div class="time">00:00</div>
+		</div>
+		<div id="info">
+			Custom JS for mouse and touch dragging talking with <a href="http://www.jplayer.org/" target="blank">jPlayer</a>!<br><br>
+			Check out <a href="drag.js" target="_blank">drag.js</a> here - there are comments where you set your play bar IDs up.<br><br><br>
+			Music by <a href="http://ucollective.org/profile/goodboymamen/" target="_blank">Goodboy Malmen</a>, from <a href="http://ucollective.org/audio/goodboymamen/nusd-the+darvati+beware+of+the+rough+bass/" target="_blank">&micro;Collective.org</a>.<br><br>
+			Read my article about this <a href="http://sam.wray.pro/grams/draggable-seek-bar-for-jplayer/">here</a>.
+		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" charset="utf-8"></script>
+		<script src="../drag.js" charset="utf-8"></script>
+		<script src="jquery.jplayer.min.js" charset="utf-8"></script>
+		<script>
+			$(function () {
+			    $('#jplayer').jPlayer({
+			        ready: function (event) {
+			            $(this).jPlayer('setMedia', {mp3 : 'http://ucollective.org/items/music/goodboymamen - NUSD-TheDARVATIbewareoftheroughbass.mp3', oga : './goodboymamen - NUSD-TheDARVATIbewareoftheroughbass.ogg'});
+			        },
+			        solution: 'html',
+			        swfPath: './',
+			        supplied: 'mp3,oga',
+			        wmode: 'window',
+			        cssSelectorAncestor: '',
+			        cssSelector: {
+			            play: '.play',
+			            pause: '.pause',
+			            seekBar: '.seek-bar',
+			            playBar: '.play-bar',
+			            currentTime: '.time'
+			        }
+			    });
+			});
+		</script>
+	</body>
+</html>

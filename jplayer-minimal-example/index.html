@@ -1,0 +1,67 @@
+<!DOCTYPE>
+<html>
+    <head>
+ 
+        <!--Meta tags-->
+        <meta charset="utf-8">
+ 
+        <!--Title-->
+        <title></title>
+         
+        <!--jQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+         
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+				<!--jPlayer-->
+				<script src="js/jquery.jplayer.min.js"></script>
+     
+				<link rel="stylesheet" type="text/css" href="orman_style.css">
+    </head>
+<body>
+<h1> All your base are belong to us. </h1>
+You are on the way to destruction!
+<!--<div id="jp_container_1" class="jp-video jp-video-360p">-->
+ 
+    <!--container in which our video will be played-->
+    <!--<div id="jquery_jplayer_1" class="jp-jplayer"></div>-->
+     
+<!--</div>[>end jp_container_1<]-->
+
+</body>
+<!--instantiate-->
+<script type="text/javascript">
+$(document).ready(function(){
+ 
+		var div = document.createElement('div');
+		div.id = "jp_container_1";
+		div.className = "jp-video jp-video-360p";
+		var divChild = document.createElement('div');
+		divChild.id = "jquery_jplayer_1";
+		div.className = "jp-jplayer";
+		div.appendChild(divChild);
+
+		document.body.appendChild(div);
+    $("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+            $(this).jPlayer("setMedia", {
+                m4v: "small.mp4",
+                ogv: "small.ogv",
+                webmv: "small.webm",
+                poster: "small.png"
+            });
+						$(this).jPlayer( "play" );
+        },
+        swfPath: "js",
+        supplied: "webmv, ogv, m4v",
+        size: {
+            width: "1280px",
+            height: "720px",
+            cssClass: "jp-video-360p"
+        }
+    });
+});
+</script>
+</html>

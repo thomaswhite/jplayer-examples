@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>YouTube MP3 Streamer</title>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<style>
+		.btn-auth:after {
+			content: " Connect";
+		}
+		.btn-auth.disabled:after {
+			content: " Connected";
+		}
+
+		/* Sticky footer styles
+		-------------------------------------------------- */
+		html {
+			position: relative;
+			min-height: 100%;
+		}
+		body {
+			/* Margin bottom by footer height */
+			margin-bottom: 60px;
+		}
+		.footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			/* Set the fixed height of the footer here */
+			height: 60px;
+			background-color: #f5f5f5;
+			display: none;
+		}
+
+
+		/* Custom page CSS
+		-------------------------------------------------- */
+		/* Not required for template or sticky footer method. */
+
+		.container {
+			width: auto;
+			max-width: 680px;
+			padding: 0 15px;
+		}
+		.container .text-muted {
+			margin: 20px 0;
+		}
+
+		.fa {
+			cursor: pointer;
+			font-size: 32px !important;
+		}
+
+		.jp-audio {
+			color: black;
+		}
+			
+		#loading-gif {
+			display: none;
+		}
+			
+		.metadata {
+			display: none;
+		}
+
+		.jumbotron h1, .jumbotron .h1 {
+			font-size: 4.9vh;
+		}
+
+		.jumbotron p {
+			font-size: 3.9vh !important;
+		}
+		</style>
+	</head>
+	<body>
+
+		<div role="navigation" class="navbar navbar-default navbar-static-top" style="margin-bottom: 0; background: #DD2C2E">
+		    <div class="container-fluid">
+		        <div class="navbar-header">
+		            <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggle">
+		            	<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span>
+		            	<span class="icon-bar"></span><span class="icon-bar"></span>
+		            </button>
+		            <a href="/?theme=9" class="navbar-brand">YouTube MP3 Streamer</a>
+		        </div>
+		        <div class="navbar-collapse collapse">
+		            <ul class="nav navbar-nav">
+		            </ul>
+		            <ul class="nav navbar-nav navbar-right visible-md visible-lg"></ul>
+		        </div>
+		    </div>
+		</div>
+		
+
+		<div class="jumbotron">
+			<div class="container text-center">
+				<h1>YouTube MP3 Streamer</h1>
+				<p>Paste your YouTube URL and stream the audio!</p>
+			</div>
+		</div>
+
+		<div class="container">
+
+			<div class="login-wrapper">
+				<div class="col-lg-12">
+					<div class="input-group">
+						<input type="text" id="url" class="form-control" placeholder="YouTube URL">
+						  <span class="input-group-btn">
+							<button class="btn btn-default" type="button" id="submit-data">Go!</button>
+						  </span>
+					</div><!-- /input-group -->
+				</div><!-- /.col-lg-6 -->
+			</div>
+
+			<div class="metadata" style="padding: 20px; text-align: center">
+				<span id="title"></span>
+			</div>
+
+
+		</div>
+
+
+		<div id="loading-gif" style="text-align: center; margin-top: 100px">
+			<img src="../img/ajax-loader.gif" />
+		</div>
+
+
+
+		<footer class="footer">
+			<div class="container">
+				<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+				<div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
+					<div class="jp-type-single">
+						<div class="jp-gui jp-interface">
+							<!--
+							<div class="jp-volume-controls">
+								<button class="jp-mute" role="button" tabindex="0">mute</button>
+								<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+								<div class="jp-volume-bar">
+									<div class="jp-volume-bar-value"></div>
+								</div>
+							</div>
+							-->
+							<div class="jp-controls-holder" style="margin-top: 12px">
+								<div class="jp-controls" style="float: left">
+									<i class="jp-play fa fa-play" id="play-button" tabindex="0"></i>
+									<!--
+									<button class="jp-stop fa fa-pause" role="button" tabindex="0"></button>
+									-->
+								</div>
+								<div class="jp-progress">
+									<div class="jp-seek-bar">
+										<div class="jp-play-bar"></div>
+									</div>
+								</div>
+								<div style="float: right; margin-top: 8px;">
+									<span class="jp-current-time" role="timer" aria-label="time">&nbsp;</span> /
+									<span class="jp-duration" role="timer" aria-label="duration">&nbsp;</span>
+									<!--
+									<div class="jp-toggles">
+										<button class="jp-repeat" role="button" tabindex="0">repeat</button>
+									</div>
+									-->
+								</div>
+							</div>
+						</div>
+						<div class="jp-details">
+							<div class="jp-title" aria-label="title">&nbsp;</div>
+						</div>
+						<div class="jp-no-solution">
+							<span>Update Required</span>
+							To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+
+		<!-- third party sourced scripts/styles -->
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+		<!-- Bootstrap CSS -->
+		<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/yeti/bootstrap.min.css" rel="stylesheet">
+		<!-- jQuery -->
+		<script src="//code.jquery.com/jquery.min.js"></script>
+		<!-- Bootstrap JavaScript -->
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/jplayer/jquery.jplayer.min.js"></script>
+
+		<script type="text/javascript">
+
+		$(function() {
+
+
+			$("#jquery_jplayer_1").jPlayer({
+				ready: function (event) {
+					/*
+					$(this).jPlayer("setMedia", {
+						m4a: "http://localhost:3000/data/test.mp3"
+
+					});
+					*/
+				},
+				playing: function (event) {
+					$('#play-button').removeClass('fa-play').addClass('fa-pause');
+				},
+				pause: function (event) {
+					$('#play-button').removeClass('fa-pause').addClass('fa-play');
+				},
+				swfPath: "../dist/jplayer",
+				supplied: "m4a, oga",
+				wmode: "window",
+				useStateClassSkin: true,
+				autoBlur: false,
+				smoothPlayBar: true,
+				keyEnabled: true,
+				remainingDuration: false,
+				toggleDuration: false
+			});
+
+			$('#submit-data').on('click', function () {
+				var url = $('#url').val();
+
+				var video_id = '';
+
+				// if it's mobile url
+				if (url.indexOf('youtu.be') > -1) {
+					video_id = url.split('/')[url.split('/').length - 1];
+					console.log(video_id);
+
+				// normal youtube url
+				} else {
+					video_id = $('#url').val().split('v=')[1];
+				}
+
+				// If a YouTube URL was entered, process the video
+				if (video_id && video_id.length > 0) {
+
+					var ampersandPosition = video_id.indexOf('&');
+					if (ampersandPosition != -1) {
+						video_id = video_id.substring(0, ampersandPosition);
+					}
+
+					$.ajax({
+						url: '/submit',
+						type: 'POST',
+						beforeSend: function () {
+							$('#loading-gif').show();
+						},
+						complete: function () {
+							$('#loading-gif').hide();
+							$('.metadata').show();
+							$('.footer').show();
+						},
+						data: JSON.stringify(
+							{
+								videoId: video_id
+							}
+						),
+						contentType: 'application/json',
+						success: function (result) {
+							var file = result[0].file.split('/')[result[0].file.split('/').length - 1];
+							var title = result[0].title;
+
+							$("#jquery_jplayer_1").jPlayer("setMedia", {
+								m4a: window.location.href + 'data/' + file
+							});
+
+							$('#title').html(title);
+
+							$("#jquery_jplayer_1").jPlayer("play");
+						}
+					});
+
+				// Use entered something that was not a YouTube URL
+				} else {
+					alert('Please enter a valid YouTube URL');
+				}
+
+			});
+
+
+		});
+		</script>
+
+	</body>
+</html>

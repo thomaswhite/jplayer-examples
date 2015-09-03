@@ -1,0 +1,298 @@
+@import url(http://fonts.googleapis.com/css?family=Berkshire+Swash);
+*{
+	margin: 0px;
+	padding: 0px;
+}
+.Berkshire{
+	font-family: 'Berkshire Swash', cursive;
+	text-align: center;
+}
+.justificado{
+	text-align: justify;
+	padding: 20px 20px 20px 30px;
+	font-size: 20px;
+	font-weight: lighter;
+}
+.justificado img{
+	max-width: 150px;
+	max-height: 70px;
+}
+.justificado a{
+	color: rgb(100,100,100);
+	text-decoration: underline;
+	transition: all 1s;
+}
+.justificado a:hover{
+	color: rgb(50,50,50);
+	text-decoration: none;
+	transition: all 1s;
+}
+body {
+	height: 100%;
+	width: 100%;
+	display: block;
+	background: black;
+	font-family: Verdana, Helvetica, Arial, "Lucida Grande";
+	font-size: 12px;
+}
+
+a img{
+	border: none;
+	outline:none;
+	margin-right: 10px;
+}
+
+input[type="text"] {
+	font-family: 'Berkshire Swash', cursive;
+	color: rgb(225,225,225);
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px grey;
+	background-color: black;
+	margin: 15px 15px 0 0;
+	padding: 5px 13px 5px 13px;
+	width: 80%;
+}
+
+input[type="text"]:focus {
+    outline: none;   
+}
+
+.progress-container {
+	position: relative;
+	height: 50px;
+	width:100%;
+}
+.waveform-container {
+	top: 0px;
+}
+.waveform-container img {
+	width:100%;
+	height: 50px;
+	background-color: rgb(34,169,228);
+}
+.jp-progress {
+	position: absolute;
+	top: 0px;
+	width:100%;
+	height: 50px;
+}
+.jp-seek-bar {
+	height: 50px;
+	background-color: #fff;
+	opacity: 0.4;
+	cursor: pointer;
+}
+.jp-play-bar {
+	height: 50px;
+	background-color: #000;
+	opacity: 0.4;
+	cursor: pointer;
+}
+
+.music:hover{
+        box-shadow: 5px 5px 5px black;
+        -moz-transform: scale(1.05);
+        -webkit-transform: scale(1.05);
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+}
+.music {
+	cursor: pointer;
+        background: lightgrey;
+        display: inline-table;
+        width: 150px;
+        height: 250px;
+        margin: 5px;
+        padding: 5px;
+	overflow: hidden;
+	-webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+}
+.music img {
+        cursor: pointer;
+        width: 100%;
+        height: 150px;
+        margin: 0px;
+        padding: 0px;
+}
+
+.music .contenido{
+	width: 100%;
+	height: 100px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	margin: 0px;
+        padding: 0px;
+}
+#musicEqualizer{
+        width: 100%;
+        height: 150px;
+        background: url('../images/musicEqualizer.png') repeat-x;
+        background-size: 853px 150px;
+        position: absolute;
+        top: 0px;
+        z-index: -2;
+}
+
+#ricky{
+        cursor: help;
+        display: inline-block;
+        background: url('../images/ricky.png');
+        width: 64px;
+        height: 64px;
+}
+
+#main{
+        font-family: 'Berkshire Swash', cursive;
+	color: rgb(225,225,225);
+        margin: 0 auto;
+        padding: 0px;
+        height: 150px;
+        width: 320px;
+}
+
+#logo{
+        height: 64px;
+}
+
+#musicfy{
+        width: 75%;
+        margin-top: 4px;
+        float: left;
+        height: 60px;
+        font-size: 45px;
+        text-align: center;
+}
+    
+#loading {
+        background-color: rgb(225,225,225);
+        opacity: 0.5;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+        font-family: 'Englebert', sans-serif;
+        font-size: 25px;
+        z-index: 50;
+}
+    
+#SCresultados{
+	position: fixed;
+        overflow: auto;
+        height: 75%;
+	width: 100%;
+}
+#containerResultados{
+	margin: 10px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+#containerResultados{
+	display: inline-block;
+}
+
+#dialogo{
+	display: none;
+	position: absolute;
+	z-index: 50;
+	background: grey;
+	opacity: 0.8;
+	width: 100%;
+	height: 100%;
+}
+
+#contenidoDialogo{
+	display: none;
+	position: absolute;
+	z-index:51;
+	background: rgb(245,245,245);
+	width:80%;
+	height:80%;
+	top:10%;
+	left: 50%;
+	margin-left: -40%;
+	overflow-y: auto;
+	overflow-x:hidden;
+	border-radius: 10px;
+}
+
+#panel{
+	position: absolute;
+	left: 0px;
+	top: 50%;
+	margin-top: -125px;
+        height: 250px;
+	width: 125px;
+}
+
+#panelContenido{
+	background: white;
+        float: left;
+        margin: 0px;
+        padding: 0px;
+        width: 80px;
+        height: 250px;
+	box-shadow: 5px 5px 5px grey;
+}
+
+#icono{
+        float: left;
+        width: 25px;
+        height: 25px;
+        background: url("../images/arrowL.png");
+        margin-top: 113px;
+        cursor: pointer;
+}
+
+.link{
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+}
+
+.link:hover{
+        transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	border: solid 2px white;
+	box-shadow: 5px 5px 4px grey;
+        cursor: pointer;
+        transform: rotate(15deg);
+	-webkit-transform: rotate(15deg);
+}
+
+#contenedorLinks{
+        height: 250px;
+        overflow: scroll;
+        overflow-y:scroll;
+        overflow-x:hidden;
+}
+
+#click{
+	cursor: pointer;
+	background: url("../images/click.png");
+	width: 128px;
+	height: 64px;
+	position: absolute;
+	top: 0px;
+	z-index: 10;
+	left: 50%;
+	margin-left: 150px;
+}
+#nowPlaying{
+	width: 250px;
+	min-height: 20px;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 0px;
+	background: rgb(250,250,250);
+	text-align: center;
+	left: 50%;
+	margin-left: -125px;
+	padding: 5px;
+	opacity: 0.9;
+	z-index: 10;
+}

@@ -1,0 +1,597 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#jp_container_1, #jp_container_1 a {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+#jp_container_1 .jp-playlist {
+  margin: 22px 12px 0;
+  position: relative;
+  z-index: 5;
+}
+#jp_container_1 .jp-playlist .jp-playlist-current {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+#jp_container_1 .jp-controls {
+  text-indent: -999em !important;
+}
+#jp_container_1 .jp-controls .jp-play, #jp_container_1 .jp-controls .jp-stop, #jp_container_1 .jp-controls .jp-pause {
+  height: 12px;
+  width: 40px;
+  margin: 0;
+  position: absolute;
+  z-index: 999;
+  top: 420px;
+  left: 149px;
+  bottom: auto;
+  right: auto;
+  -moz-transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.2);
+}
+#jp_container_1 .jp-controls .jp-play:hover, #jp_container_1 .jp-controls .jp-stop:hover, #jp_container_1 .jp-controls .jp-pause:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+#jp_container_1 .jp-controls .jp-play:active, #jp_container_1 .jp-controls .jp-stop:active, #jp_container_1 .jp-controls .jp-pause:active {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+#jp_container_1 .jp-controls .jp-stop {
+  left: 91px;
+}
+#jp_container_1 .jp-controls .jp-next {
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  position: absolute;
+  z-index: 999;
+  top: 420px;
+  left: 160px;
+  bottom: auto;
+  right: auto;
+  border-radius: 3px;
+  left: 39px;
+  top: 351px;
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+#jp_container_1 .jp-controls .jp-next:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(transparent));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  /* current standard, but unimplemented */
+}
+#jp_container_1 .jp-controls .jp-next:active {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+#jp_container_1 .jp-controls .jp-previous {
+  height: 20px;
+  width: 20px;
+  margin: 0;
+  position: absolute;
+  z-index: 999;
+  top: 420px;
+  left: 160px;
+  bottom: auto;
+  right: auto;
+  border-radius: 3px;
+  left: 40px;
+  top: 305px;
+}
+#jp_container_1 .jp-controls .jp-previous:hover {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(transparent));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.5), transparent);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
+  /* current standard, but unimplemented */
+}
+#jp_container_1 .jp-controls .jp-previous:active {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+#jp_container_1 .jp-duration, #jp_container_1 .jp-current-time {
+  position: absolute;
+  z-index: 999;
+  top: 36px;
+  left: 200px;
+  bottom: auto;
+  right: auto;
+  z-index: 0;
+}
+#jp_container_1 .jp-current-time {
+  left: 62px;
+}
+#jp_container_1 .jp-repeat {
+  position: absolute;
+  z-index: 999;
+  top: 340px;
+  left: 200px;
+  bottom: auto;
+  right: auto;
+  background: red;
+}
+#jp_container_1 .jp-gui .jp-interface .jp-progress {
+  position: relative;
+  z-index: 5;
+  margin: 12px;
+  background: #949E3A;
+  cursor: text;
+}
+#jp_container_1 .jp-gui .jp-interface .jp-progress .jp-seek-bar .jp-play-bar {
+  height: 10px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background-color: #F3F2E8;
+  background-repeat: no-repeat;
+  color: #4d25a4;
+  font-family: arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+}
+body a {
+  text-decoration: none;
+  outline: none;
+}
+
+.gameboy {
+  height: 555px;
+  width: 340px;
+  margin: 40px 0 0;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-border-bottom-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  overflow: hidden;
+  background: #f8f5de;
+  margin: 20px auto;
+  position: relative;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+}
+.gameboy .upper-division {
+  position: absolute;
+  height: 5px;
+  width: 100%;
+  margin: 23px 0;
+  background: rgba(128, 128, 128, 0.2);
+}
+.gameboy .upper-division:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 23px;
+  width: 5px;
+  margin: -23px 0;
+  background: rgba(128, 128, 128, 0.2);
+  left: 23px;
+}
+.gameboy .upper-division:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 23px;
+  width: 5px;
+  margin: -23px 0;
+  background: rgba(128, 128, 128, 0.2);
+  right: 23px;
+}
+.gameboy .screen-section {
+  height: 270px;
+  width: 100%;
+  margin: 0;
+}
+.gameboy .screen-section .dot-matrix {
+  height: 230px;
+  width: 300px;
+  margin: 40px 20px 0;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-border-bottom-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background: #999999;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  position: relative;
+}
+.gameboy .screen-section .dot-matrix:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 230px;
+  width: 100%;
+  margin: 0;
+  top: 0px;
+  left: 0px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(transparent));
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.5), transparent);
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.5), transparent);
+  background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.5), transparent);
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.5), transparent);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+  /* current standard, but unimplemented */
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-border-bottom-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+.gameboy .screen-section .dot-matrix .stereo-sound {
+  height: 3px;
+  width: auto;
+  margin: 10px 10px 0;
+  border-top: 2px solid #9c4c8e;
+  border-bottom: 2px solid #4d25a4;
+}
+.gameboy .screen-section .dot-matrix .stereo-sound span {
+  text-transform: uppercase;
+  color: white;
+  font-size: 9px;
+  position: absolute;
+  z-index: 999;
+  top: 9px;
+  left: 75px;
+  bottom: auto;
+  right: auto;
+  z-index: 0;
+  background: #999;
+  padding: 0 5px;
+}
+.gameboy .screen-section .dot-matrix .battery {
+  height: 10px;
+  width: 10px;
+  margin: 63px 16px 0;
+  -webkit-border-radius: 300px;
+  border-radius: 300px;
+  background: white;
+  box-shadow: 0 0 3px white;
+  float: left;
+}
+.gameboy .screen-section .dot-matrix .battery span {
+  text-transform: uppercase;
+  color: white;
+  font-size: 9px;
+  font-size: 8px;
+  position: absolute;
+  margin: 20px -12px;
+}
+.gameboy .screen-section .dot-matrix .screen {
+  height: 180px;
+  width: 200px;
+  margin: 10px 50px;
+  background: #c2cf4a;
+  text-indent: 0 !important;
+  text-shadow: 1px 3px 1px rgba(0, 0, 0, 0.07);
+}
+.gameboy .screen-section .tm {
+  margin: 15px 19px;
+}
+.gameboy .controls-section .direction {
+  height: 100px;
+  width: 100px;
+  margin: 20px;
+  float: left;
+  overflow: hidden;
+  -webkit-border-radius: 300px;
+  border-radius: 300px;
+  background: white;
+}
+.gameboy .controls-section .direction .left-right, .gameboy .controls-section .direction .up-down {
+  height: 70px;
+  width: 23px;
+  margin: 13px 38px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: #555555;
+  box-shadow: inset 0 0px 8px black;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+.gameboy .controls-section .direction .left-right:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  margin: 74px 7px;
+  border-width: 6px 4px;
+  border-style: solid;
+  border-color: rgba(128, 128, 128, 0.2) transparent transparent transparent;
+}
+.gameboy .controls-section .direction .left-right:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  margin: -16px 7px;
+  border-width: 6px 4px;
+  border-style: solid;
+  border-color: transparent transparent rgba(128, 128, 128, 0.2) transparent;
+}
+.gameboy .controls-section .direction .up-down {
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  margin: -84px 39px;
+}
+.gameboy .controls-section .direction .up-down:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  margin: 74px 7px;
+  border-width: 6px 4px;
+  border-style: solid;
+  border-color: rgba(128, 128, 128, 0.2) transparent transparent transparent;
+}
+.gameboy .controls-section .direction .up-down:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  margin: -16px 7px;
+  border-width: 6px 4px;
+  border-style: solid;
+  border-color: transparent transparent rgba(128, 128, 128, 0.2) transparent;
+}
+.gameboy .controls-section .direction:before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 25px;
+  width: 17px;
+  margin: 38px 42px;
+  background: #555555;
+  z-index: 1;
+}
+.gameboy .controls-section .direction:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  margin: 38px 41px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #4d4d4d;
+  z-index: 2;
+}
+.gameboy .controls-section .a-b, .gameboy .controls-section .select-start {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+.gameboy .controls-section .a-b, .gameboy .controls-section .speaker {
+  -moz-transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+.gameboy .controls-section .a-b {
+  height: auto;
+  width: 112px;
+  margin: 36px 8px 0;
+  -webkit-border-radius: 300px;
+  border-radius: 300px;
+  float: right;
+  background: white;
+}
+.gameboy .controls-section .a-b .a, .gameboy .controls-section .a-b .b {
+  height: 40px;
+  width: 40px;
+  margin: 8px;
+  -webkit-border-radius: 300px;
+  border-radius: 300px;
+  float: left;
+  background: #9c4c8e;
+  box-shadow: 0 1px 4px black, inset 0 0 4px #3F1D39;
+  line-height: 105px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.gameboy .controls-section .select-start {
+  height: 40px;
+  width: 120px;
+  margin: 135px -37px 0;
+  float: left;
+}
+.gameboy .controls-section .select-start .select, .gameboy .controls-section .select-start .start {
+  height: 10px;
+  width: 40px;
+  margin: 10px 2px;
+  -webkit-border-radius: 300px;
+  border-radius: 300px;
+  -moz-transform: rotate(-30deg);
+  -webkit-transform: rotate(-30deg);
+  -o-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+  background: white;
+  float: left;
+  padding: 7px;
+  line-height: 45px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 9px;
+}
+.gameboy .controls-section .select-start .select:after, .gameboy .controls-section .select-start .start:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 10px;
+  width: 40px;
+  margin: -46px 0px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: #cccccc;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+}
+.gameboy .controls-section .speaker {
+  height: 100px;
+  width: 180px;
+  margin: 42px -56px;
+  padding-left: 20px;
+  float: right;
+}
+.gameboy .controls-section .speaker .hole {
+  display: block;
+  height: 65px;
+  width: 8px;
+  margin: 5px;
+  -webkit-border-radius: 300px;
+  border-radius: 300px;
+  float: left;
+  background: rgba(128, 128, 128, 0.2);
+  position: relative;
+  z-index: 2;
+}
+.gameboy .controls-section .speaker .hole:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 48px;
+  width: 2px;
+  margin: 2px 1px;
+  background: rgba(128, 128, 128, 0.2);
+}
+.gameboy .controls-section .speaker .hole:first-child:after {
+  display: none;
+}
+.gameboy .controls-section .speaker:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 43px;
+  width: 180px;
+  margin: 54px -43px;
+  background: rgba(128, 128, 128, 0.05);
+  z-index: -1;
+}
+.gameboy .proaudio {
+  height: 3px;
+  width: 30px;
+  margin: 0;
+  position: absolute;
+  z-index: 999;
+  top: auto;
+  left: 20px;
+  bottom: 0;
+  right: auto;
+}
+
+body {
+  background-image: -moz-repeating-linear-gradient(90deg, transparent 0pt, rgba(0, 0, 0, 0.02) 5px), -moz-repeating-linear-gradient(-151deg, transparent 0pt, rgba(0, 0, 0, 0.02) 5px);
+  background-image: -webkit-repeating-linear-gradient(90deg, transparent 0pt, rgba(0, 0, 0, 0.02) 7px), -webkit-repeating-linear-gradient(-192deg, transparent 0pt, rgba(0, 0, 0, 0.005) 0);
+}
+
+.gameboy {
+  -moz-box-shadow: 0 0 4px #333 inset, 0 0 30px #777;
+  -webkit-box-shadow: 0 0 4px #333 inset, 0 0 30px #777;
+  box-shadow: 0 0 4px #333 inset, 0 0 30px #777;
+}
+.gameboy .screen-section .screen {
+  -moz-box-shadow: inset 3px 2px 8px, inset -2px -1px 6px;
+  -webkit-box-shadow: inset 3px 2px 8px, inset -2px -1px 6px;
+  box-shadow: inset 3px 2px 8px, inset -2px -1px 6px;
+}
+.gameboy .controls-section .direction {
+  background-image: -moz-radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+  background-image: -webkit-radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+  background-image: -o-radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+  background-image: -ms-radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+  background-image: radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+}
+.gameboy .controls-section .a-b {
+  background-image: -moz-radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+  background-image: -webkit-radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+  background-image: -o-radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+  background-image: -ms-radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+  background-image: radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+}
+.gameboy .controls-section .a-b .a, .gameboy .controls-section .a-b .b {
+  background-image: -moz-radial-gradient(50% 50%, circle closest-side, #b566a7 0%, #9c4c8e 100%);
+  background-image: -webkit-radial-gradient(50% 50%, circle closest-side, #b566a7 0%, #9c4c8e 100%);
+  background-image: -o-radial-gradient(50% 50%, circle closest-side, #b566a7 0%, #9c4c8e 100%);
+  background-image: -ms-radial-gradient(50% 50%, circle closest-side, #b566a7 0%, #9c4c8e 100%);
+  background-image: radial-gradient(50% 50%, circle closest-side, #b566a7 0%, #9c4c8e 100%);
+}
+.gameboy .controls-section .select-start .select, .gameboy .controls-section .select-start .start {
+  background-image: -moz-radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+  background-image: -webkit-radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+  background-image: -o-radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+  background-image: -ms-radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+  background-image: radial-gradient(50% 50%, circle closest-side, #efe8b4 0%, #f5f1d1 100%);
+}
+.gameboy .controls-section .select-start .select:after, .gameboy .controls-section .select-start .start:after {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white 0%), to(transparent 85%));
+  background-image: -webkit-linear-gradient(top, white 0%, transparent 85%);
+  background-image: -moz-linear-gradient(top, white 0%, transparent 85%);
+  background-image: -ms-linear-gradient(top, white 0%, transparent 85%);
+  background-image: -o-linear-gradient(top, white 0%, transparent 85%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, transparent 85%);
+  /* current standard, but unimplemented */
+}

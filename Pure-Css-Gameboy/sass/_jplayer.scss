@@ -1,0 +1,91 @@
+@import "_utilities";
+
+
+$text-color: hsla(0, 0%, 0%, .5);
+$current-color: hsla(0, 0%, 0%, .7) !important;
+
+#jp_container_1{
+  &, a {
+    color: $text-color !important;
+  }
+
+    .jp-playlist{
+      margin: 22px 12px 0;
+      position: relative;
+      z-index: 5;
+      .jp-playlist-current {
+        color: $current-color; 
+      }
+    }
+
+    .jp-controls {
+      text-indent: -999em !important;      
+      .jp-play, .jp-pause{
+        @include size(12px, 40px);
+        @include abPos(420px, auto, auto, 149px);            
+        @include rotate($degs: -30deg);
+        @include radius($rad: 5px);
+        background: hsla(0, 50%, 0%, .2);
+        &:hover{
+          background: hsla(0, 50%, 0%, .4);
+        }
+        @include click;
+      }           
+      .jp-stop {
+        @extend .jp-play;
+        left: 91px;
+      }
+      .jp-next {
+        @include active-button;
+        left: 39px;
+        top: 351px;
+        @include rotate($degs: 180deg);
+        @include click;
+      }
+      .jp-previous{
+        @include active-button;
+        left: 40px;
+        top: 305px;
+        @include click;
+      }      
+    }
+
+
+      
+    .jp-duration, .jp-current-time {
+      @include abPos(36px, auto, auto, 200px ); 
+      z-index: 0;   
+    }
+    .jp-current-time {
+      left: 62px;
+    }    
+    .jp-repeat {
+      @include abPos(340px, auto, auto, 200px);
+      background: red;
+    }
+
+
+    .jp-gui {
+      .jp-interface {
+        .jp-progress {
+		      position: relative;
+		      z-index: 5;
+		      margin: 12px;
+		      background: #949E3A;
+		      cursor: text;
+          .jp-seek-bar {
+            .jp-play-bar {
+              height: 10px;
+              background: $text-color;
+            }
+          }      
+        }
+      }  
+    }
+
+
+  
+}
+
+
+

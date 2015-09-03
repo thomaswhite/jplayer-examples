@@ -1,0 +1,96 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use 5.010;
+
+use Path::Class;
+use IO::File;
+use Pod::Usage;
+use Getopt::Long;
+
+
+### aide intégrée
+# si -h ou -help ou -? : affiche l'aide
+# S'il n'y a aucun argument : pointe l'erreur et affiche l'aide
+# Si plus d'un dossier est indiqué en argument : pointe l'erreur et affiche l'aide
+
+my $help = 0;
+my $man  = 0;
+GetOptions('help|?' => \$help, man => \$man) or pod2usage(2);
+pod2usage(1) if $help;
+pod2usage(-verbose => 2) if $man;
+pod2usage("$0: No directory given.")  if (@ARGV == 0);
+pod2usage("$0: Only one directory is allowed.")  if (@ARGV > 1);
+
+### gestion de la ligne de commande
+
+my ($rep) = @ARGV; # on donne en argument le dossier dans lequel se trouve les vidéos
+
+### dossiers et fichiers
+
+my $dir = dir($rep);
+
+my $filepath = './db.js';
+my $dbfile = IO::File->new($filepath, '>') or die "$filepath est inaccessible: $!";
+
+### données de la base
+
+my $script_debut = q<$(document).ready(function(){new jPlayerPlaylist({jPlayer: "#jquery_jplayer_1",cssSelectorAncestor: "#jp_container_1"},[>;
+my $script_fin = q<],{swfPath: "lib", solution: 'html, flash', supplied: "webmv, ogv, m4v", size: {width: "640px",height: "360px",cssClass: "jp-video-360p"}});});>;
+
+
+sub traitement_chaine {
+  my ($reg, $format, $ext) = @_;
+  my $chaine = $reg;
+  $chaine =~ s/^\.\///g;
+  $chaine =~ s/^\.\.\///g;
+  $chaine =~ s/\// ▸ /g;
+  $dbfile->print("{ title:\"$chaine\", $format:\"$reg\.$ext\" },\n") or die "write error: $!";
+}
+
+
+### écriture de la base
+
+$dbfile->print("//<![CDATA["."\n".$script_debut."\n") or die "write error: $!";
+
+$dir->recurse( 
+	      callback => sub {
+		my $video = shift;
+		return if $video->is_dir;
+		given($video) {
+		  when (/(.*)\.webm$/) { traitement_chaine($1, "webmv", "webm");}
+		  when (/(.*)\.ogv$/)  { traitement_chaine($1, "ogv", "ogv");}
+		  when (/(.*)\.ogg$/)  { traitement_chaine($1, "ogv", "ogg");}
+		  when (/(.*)\.ogm$/)  { traitement_chaine($1, "ogv", "ogm");}
+		  #when (/(.*)\.m4v$/)  { traitement_chaine($1, "m4v", "m4v");}
+		  #when (/(.*)\.mp4$/)  { traitement_chaine($1, "m4v", "mp4");}
+		  default              {}
+		}
+	      });
+
+$dbfile->print($script_fin."\n"."//]]>\n") or die "write error: $!";
+
+__END__
+
+=head1 NAME
+
+jppg -- jPlayer Playlist Generator
+
+=head1 SYNOPSIS
+
+jppg [options] [dossier]
+
+Options :
+
+   -help   aide succinte
+
+   -man    documentation
+
+   dossier dossier dans lequel se trouve les videos
+
+=head1 DESCRIPTION
+
+Ce programme genère une base donnee pour le lecteur multimedia html5 jPlayer.
+
+=cut

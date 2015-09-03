@@ -1,0 +1,22 @@
+{
+  "name": "jPlayer m3u Demo",
+  "version": "0.0.1",
+  "authors": [
+    "Matthias Gutjahr <mattsches@gmail.com>"
+  ],
+  "main": "static/js/src/main.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.11.1",
+    "jplayer": "~2.8.4",
+    "javascript-playlist-parser": "git://github.com/nickdesaulniers/javascript-playlist-parser.git"
+  }
+}
